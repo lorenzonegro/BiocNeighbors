@@ -313,3 +313,4 @@ void VpTree<Distance>::search_all(NodeIndex_t curnode_index, const double* targe
 
 template class VpTree<BNManhattan>;
 template class VpTree<BNEuclidean>;
+template class VpTree<BNHamming>;

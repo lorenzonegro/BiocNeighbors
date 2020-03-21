@@ -8,6 +8,10 @@ VptreeParam <- function(distance="Euclidean") {
     new("VptreeParam", distance=distance)
 }
 
+VptreeParam <- function(distance="Hamming") {
+  new("VptreeParam", distance=distance)
+}
+
 setMethod("spill_args", "VptreeParam", function(x) {
     list(distance=bndistance(x))
 })
@@ -20,6 +24,10 @@ setMethod("spill_args", "VptreeParam", function(x) {
 #' @importFrom methods new
 VptreeIndex <- function(data, nodes, order, NAMES=NULL, distance="Euclidean") {
     new("VptreeIndex", data=data, nodes=nodes, order=order, NAMES=NAMES, distance=distance)
+}
+
+VptreeIndex <- function(data, nodes, order, NAMES=NULL, distance="Hamming") {
+  new("VptreeIndex", data=data, nodes=nodes, order=order, NAMES=NAMES, distance=distance)
 }
 
 #' @importFrom S4Vectors setValidity2

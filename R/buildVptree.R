@@ -1,6 +1,6 @@
 #' @export
 #' @importFrom Matrix t
-buildVptree <- function(X, transposed=FALSE, distance=c("Euclidean", "Manhattan"))
+buildVptree <- function(X, transposed=FALSE, distance=c("Euclidean", "Manhattan","Hamming"))
 # Builds an VP tree index.
 # 
 # written by Aaron Lun

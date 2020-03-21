@@ -17,4 +17,10 @@ struct BNManhattan {
     static double unnormalize(double);
 };
 
+struct BNHamming {
+  static double distance (const double*, const double*, MatDim_t);
+  static double raw_distance (const double*, const double*, MatDim_t);
+  static double normalize(double);
+  static double unnormalize(double);
+};
 #endif

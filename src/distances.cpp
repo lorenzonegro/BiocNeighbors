@@ -41,3 +41,27 @@ double BNManhattan::normalize(double val) {
 double BNManhattan::unnormalize(double val) {
     return val;
 }
+
+//d è il numero di elementi del vettore (quindi di algoritmi di clustering)
+//Poi confronto ogni singolo elemento
+double BNHamming::raw_distance(const double* x, const double* y, MatDim_t d) {
+  double res=0;
+  for (; d>0; --d, ++x, ++y) {
+    if(*x!=*y){
+      res++; 
+    }
+  }
+  return res;
+}
+
+double BNHamming::distance(const double*x, const double* y, MatDim_t d) {
+  return raw_distance(x, y, d);
+}
+
+double BNHamming::normalize(double val) {
+  return val;
+}
+
+double BNHamming::unnormalize(double val) {
+  return val;
+}

@@ -10,7 +10,12 @@ Rcpp::RObject find_vptree(Rcpp::IntegerVector to_check, Rcpp::NumericMatrix X, R
     if (dtype=="Manhattan") {
         VpTree<BNManhattan> nn_finder(X, nodes, warn_ties);
         return find_knn(nn_finder, to_check, nn, get_index, get_distance, last);
-     } else {
+     } 
+    else if (dtype=="Hamming") {
+      VpTree<BNHamming> nn_finder(X, nodes, warn_ties);
+      return find_knn(nn_finder, to_check, nn, get_index, get_distance, last);
+    } 
+     else {
         VpTree<BNEuclidean> nn_finder(X, nodes, warn_ties);
         return find_knn(nn_finder, to_check, nn, get_index, get_distance, last);
      }
